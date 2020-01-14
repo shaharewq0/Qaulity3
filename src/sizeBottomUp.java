@@ -4,7 +4,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class sizeBottomUp {
-    sizeBottomUp
+    public int[] arr;
     @Before
     public void setUp() throws Exception {
         arr= new int[]{1, 2, 3};

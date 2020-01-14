@@ -19,19 +19,33 @@ public class Program {
 	public static int minValueIndex(int[] arr) {
 		if (arr==null) return -1;
 		int res = arr[0];
-		for (int val: arr)
-			if (val<res) res = val;
-		return res;
+		int index=0;
+		int count=0;
+		for (int val: arr) {
+			if (val < res) {
+				res = val;
+				index=count;
+			}
+			count++;
+		}
+		return index;
 	}
 	
 	// Returns index of the maximum value in the array
 	// Returns -1 if array is empty
 	public static int maxValueIndex(int[] arr) {
-		if (size(arr)<1) return -1;
+		if (arr==null) return -1;
 		int res = arr[0];
-		for (int val: arr)
-			if (val>res) res = val;
-		return res;
+		int index=0;
+		int count=0;
+		for (int val: arr) {
+			if (val > res) {
+				res = val;
+				index=count;
+			}
+			count++;
+		}
+		return index;
 	}
 	
 	// Returns the maximum value in the array
@@ -42,7 +56,7 @@ public class Program {
 	
 	// Returns the minimum value in the array
 	public static int minValue(int[] arr) {
-		int ind = maxValueIndex(arr);
+		int ind = minValueIndex(arr);
 		return arr[ind]; 
 	}
 	
@@ -57,7 +71,7 @@ public class Program {
 		if (arr == null) return null;
 		int[] res = new int[size(arr)];
 		for(int i=0; i<size(arr); i++)
-			res[i] = arr[0];
+			res[i] = arr[i];
 		return res;
 	}
 	
@@ -66,7 +80,7 @@ public class Program {
 	public static int[] swapMinMax(int[] arr) {
 		int[] res = copyArr(arr);
 		int minInd = minValueIndex(arr);
-		int maxInd = maxValue(arr);
+		int maxInd = maxValueIndex(arr);
 		if (minInd <0 || maxInd <0) return null;
 		res[minInd] = arr[maxInd];
 		res[maxInd] = arr[minInd];
@@ -94,9 +108,10 @@ public class Program {
 		if (arr1==null && arr2 == null) return true;
 		if (arr1==null || arr2 == null) return false;
 		if (size(arr1)!=size(arr2)) return false;
+		boolean ok=true;
 		for (int i=0; i<size(arr1); i++)
-			if (arr1[i]==arr2[i]) return true;
-		return false;
+			if (arr1[i]!=arr2[i]) ok=false;
+		return ok;
 	}
 	
 	
