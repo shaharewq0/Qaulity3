@@ -13,8 +13,10 @@ public class maxValueIndexBottomUp {
     @Test(timeout = 100)
     public void maxValueIndex() {
         assertEquals(0,Program.maxValueIndex(arr));
-        for (int i=1;i<Program.size(arr);i++){
-            assertNotEquals(i,Program.maxValueIndex(arr));
-        }
+
+        assertEquals(-1,Program.maxValueIndex(null));
+        //assertEquals(-1,Program.maxValueIndex(new int[] {}));
+
+        //TODO : empty?
     }
 }

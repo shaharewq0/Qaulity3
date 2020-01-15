@@ -13,6 +13,9 @@ public class sizeBottomUp {
     @Test(timeout = 100)
     public void size() {
         assertEquals(3,Program.size(arr));
-        assertNotEquals(0,Program.size(arr));
+
+        assertEquals(0,Program.size(new int[] {}));
+
+        //TODO: Null?
     }
 }

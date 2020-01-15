@@ -13,8 +13,11 @@ public class minValueIndexBottomUp {
     @Test
     public void minValueIndex() {
         assertEquals(0,Program.minValueIndex(arr));
-        for (int i=1;i<Program.size(arr);i++){
-            assertNotEquals(i,Program.minValueIndex(arr));
-        }
+
+        assertEquals(-1,Program.minValueIndex(null));
+
+        //assertEquals(-1,Program.minValueIndex(new int[] {}));
+
+        //TODO : empty?
     }
 }

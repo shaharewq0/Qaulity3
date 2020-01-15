@@ -22,5 +22,16 @@ public class equalArraysBottomUp {
         assertTrue(Program.equalArrays(arr1,arr2));//equal
         assertFalse(Program.equalArrays(arr1,arr3));//diff order
         assertFalse(Program.equalArrays(arr1,arr4));// dif size
+
+        assertFalse(Program.equalArrays(arr1,null)); // second null
+        assertFalse(Program.equalArrays(null,arr1)); // first null
+        assertTrue(Program.equalArrays(null,null));  // both null
+
+        assertFalse(Program.equalArrays(arr1,new int[] {}));        // second empty
+        assertFalse(Program.equalArrays(new int[] {},arr1));        // first empty
+        assertTrue(Program.equalArrays(new int[] {},new int[] {})); // both empty
+
+        assertFalse(Program.equalArrays(null,new int[] {}));        // null-empty
+        assertFalse(Program.equalArrays(new int[] {},null));        // empty-null
     }
 }

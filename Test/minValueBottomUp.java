@@ -12,9 +12,11 @@ public class minValueBottomUp {
 
     @Test
     public void minValue() {
+
         assertEquals(arr[2],Program.minValue(arr));
-        for (int i=0;i<Program.size(arr)-1;i++){
-            assertNotEquals(arr[i],Program.minValue(arr));
-        }
+
+
+        //TODO :  null?
+        //TODO :  empty?
     }
 }

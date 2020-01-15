@@ -17,16 +17,7 @@ public class sortArrayBottomUp {
         assertTrue(Program.equalArrays(Program.sortArray(arr),sorted));
         assertFalse(Program.equalArrays(Program.sortArray(arr),arr));
 
-        //or if the use of Program.equalArrays is not good
-
-        for (int i=0;i<Program.size(arr);i++){
-            assertEquals(sorted[i],Program.sortArray(arr)[i]);
-        }
-
-        boolean equal=true;
-        for (int i=0;i<Program.size(arr);i++){
-            equal =equal && arr[i]==Program.sortArray(arr)[i];
-        }
-        assertFalse(equal);
+        assertTrue(Program.equalArrays(Program.sortArray(null),null));
+        assertTrue(Program.equalArrays(Program.sortArray(new int[]{}),new int[]{}));
     }
 }
