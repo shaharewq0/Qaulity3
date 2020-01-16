@@ -25,7 +25,7 @@ public class SizeTopDown {
     private Object expectedOutput;
 
     enum TestType { //used to define parameters for each test
-        isSorted, merge, printSorted
+        isSorted, merge, printSorted, copy,maxIndex,minIndex,size
     }
 
     @Parameterized.Parameters
@@ -38,6 +38,19 @@ public class SizeTopDown {
                 {TestType.isSorted, new int[]{1, 2, 1, 2}, null, false},
                 {TestType.isSorted, new int[]{}, null, true},
                 {TestType.isSorted, new int[]{1}, null, true},
+
+                {TestType.size,new int[]{1, 2},null,0},
+                {TestType.size,new int[]{},null,0},
+
+                {TestType.minIndex,new int[]{1, 2},null,0},
+                {TestType.minIndex,new int[]{0, -1, 3},null,1},
+                {TestType.minIndex,new int[]{},null,-1},
+
+                {TestType.maxIndex,new int[]{1, 2},null,1},
+                {TestType.maxIndex,new int[]{0, -1, 3},null,2},
+                {TestType.maxIndex,new int[]{},null,-1},
+
+                {TestType.copy,new int[]{1, 2,3,4},null,0},
 
                 //merge parameters
                 {TestType.merge, new int[]{1, 2}, new int[]{3, 4}, new int[]{1, 2, 3, 4}},
@@ -65,6 +78,34 @@ public class SizeTopDown {
         this.arr1 = arr1;
         this.arr2 = arr2;
         this.expectedOutput = expectedOutput;
+    }
+
+    @Test
+    public void size() {
+        if(type==TestType.size) {
+            assertEquals(arr1.length,p.size(arr1));
+        }
+    }
+
+
+    @Test
+    public void minValueIndex() {
+        if(type==TestType.minIndex) {
+            assertEquals(expectedOutput,p.minValueIndex(arr1));
+        }
+    }
+
+    @Test
+    public void maxValueIndex() {
+        if(type==TestType.maxIndex) {
+            assertEquals(expectedOutput,p.maxValueIndex(arr1));
+        }
+    }
+
+    @Test
+    public void copyArr() {
+        if(type == TestType.copy)
+            assert (arr1 != p.copyArr(arr1));
     }
 
     @Test

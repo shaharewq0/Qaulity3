@@ -10,9 +10,9 @@ import java.util.Collection;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 
-/*  TODO: add daniel functions
-    Test #8
-    Test: isSorted, merge, printSorted
+/*
+    Test #13
+    Test: isSorted, merge, printSorted,copyArr,swapMinMax
     Real Functions: printArr, equalArrays, sortArray, copyArr
     Stubs: size
  */
@@ -25,7 +25,7 @@ public class CopyArrTopDown {
     private Object expectedOutput;
 
     enum TestType { //used to define parameters for each test
-        isSorted, merge, printSorted
+        isSorted, merge, printSorted,swap,copy
     }
 
     @Parameterized.Parameters
@@ -38,6 +38,13 @@ public class CopyArrTopDown {
                 {TestType.isSorted, new int[]{1, 2, 1, 2}, null, false},
                 {TestType.isSorted, new int[]{}, null, true},
                 {TestType.isSorted, new int[]{1}, null, true},
+
+                {TestType.copy,new int[]{1, 2,3,4},null,0},
+
+                //swap
+                {TestType.swap,new int[]{1, 3,2,2},new int[]{3, 1,2,2},0},
+                {TestType.swap,new int[]{1, 4, 3,2},new int[]{4, 1, 3,2},0},
+                {TestType.swap,new int[]{},null,0},
 
                 //merge parameters
                 {TestType.merge, new int[]{1, 2}, new int[]{3, 4}, new int[]{1, 2, 3, 4}},
@@ -68,6 +75,12 @@ public class CopyArrTopDown {
     }
 
     @Test
+    public void copyArr() {
+        if(type == TestType.copy)
+            assert (arr1 != p.copyArr(arr1));
+    }
+
+    @Test
     public void isSorted() {
         if(type == TestType.isSorted)
             assertEquals(expectedOutput, p.isSorted(arr1));
@@ -89,10 +102,18 @@ public class CopyArrTopDown {
         }
     }
 
+    @Test
+    public void swapMinMax() {
+        if(type==TestType.swap) {
+            int[]temp=p.swapMinMax(arr1);
+            assert (arr1 != temp);
+            assertArrayEquals(arr2,temp);
+        }
+    }
+
 
     static class ProgramStub extends Program {
         /* stub for size */
-        @Override
         public int size(int[] arr) {
             if(Arrays.equals(arr, new int[]{}))
                 return 0;
