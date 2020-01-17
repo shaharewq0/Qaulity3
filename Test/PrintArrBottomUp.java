@@ -1,4 +1,3 @@
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -9,7 +8,7 @@ import java.io.PrintStream;
 import static org.junit.Assert.*;
 
 
-public class printSortedBottomUp {
+public class PrintArrBottomUp {
 
     private final ByteArrayOutputStream out = new ByteArrayOutputStream();
     private final PrintStream screen = System.out;
@@ -26,21 +25,21 @@ public class printSortedBottomUp {
 
 
     @Test(timeout = 100)
-    public void printSorted() {
+    public void printArr() {
 
-        Program.printSorted(new int[] {2,1,3});
-        assertEquals("2 1 3 \n1 2 3 \n2 1 3 \n", out.toString());
-
-        out.reset();
-        Program.printSorted(new int[] {0});
-        assertEquals("0 \n0 \n0 \n", out.toString());
+        Program.printArr(new int[] {2,1,3,4,6});
+        assertEquals("2 1 3 4 6 \n", out.toString());
 
         out.reset();
-        Program.printSorted(new int[] {});
-        assertEquals("\n\n\n", out.toString());
+        Program.printArr(new int[] {0});
+        assertEquals("0 \n", out.toString());
 
         out.reset();
-        Program.printSorted(null);
-        assertEquals("No array\n", out.toString());
+        Program.printArr(new int[] {});
+        assertEquals("\n", out.toString());
+
+
+        //TODO : Null?
+        //TODO : space at the end? mew line?
     }
 }

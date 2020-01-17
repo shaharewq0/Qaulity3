@@ -3,7 +3,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class equalArraysBottomUp {
+public class EqualArraysBottomUp {
     int[] arr1;
     int[] arr2;
     int[] arr3;

@@ -3,7 +3,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 
-public class isSortedBottomUp {
+public class IsSortedBottomUp {
 
     @Test(timeout = 100)
     public void isSorted() {

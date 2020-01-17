@@ -3,7 +3,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class sortArrayBottomUp {
+public class SortArrayBottomUp {
     int[] arr;
     int[] sorted;
     @Before

@@ -4,23 +4,23 @@ import org.junit.runner.RunWith;
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
 
-        sizeBottomUp.class,
-        printArrBottomUp.class,
+        SizeBottomUp.class,
+        PrintArrBottomUp.class,
 
-        equalArraysBottomUp.class,
-        copyArrBottomUp.class,
-        maxValueIndexBottomUp.class,
-        minValueIndexBottomUp.class,
+        EqualArraysBottomUp.class,
+        CopyArrBottomUp.class,
+        MaxValueIndexBottomUp.class,
+        MinValueIndexBottomUp.class,
 
-        sortArrayBottomUp.class,
-        swapMinMaxBottomUp.class,
-        minValueBottomUp.class,
-        maxValueBottomUp.class,
+        SortArrayBottomUp.class,
+        SwapMinMaxBottomUp.class,
+        MinValueBottomUp.class,
+        MaxValueBottomUp.class,
 
-        sumMinMaxBottomUp.class,
-        isSortedBottomUp.class,
-        mergeBottomUp.class,
-        printSortedBottomUp.class
+        SumMinMaxBottomUp.class,
+        IsSortedBottomUp.class,
+        MergeBottomUp.class,
+        PrintSortedBottomUp.class
 })
 public class BottomUp {
 }

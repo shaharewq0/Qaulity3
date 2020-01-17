@@ -3,7 +3,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 
-public class mergeBottomUp {
+public class MergeBottomUp {
 
     @Test(timeout = 100)
     public void merge() {

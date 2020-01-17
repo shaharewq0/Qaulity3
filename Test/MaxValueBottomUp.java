@@ -3,7 +3,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 
-public class maxValueBottomUp {
+public class MaxValueBottomUp {
 
     @Test(timeout = 100)
     public void maxValue() {

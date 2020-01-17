@@ -3,7 +3,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class maxValueIndexBottomUp {
+public class MaxValueIndexBottomUp {
     int[] arr;
     @Before
     public void setUp() throws Exception {
