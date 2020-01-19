@@ -23,11 +23,9 @@ public class MergeTopDown {
     public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][] {
                 {new int[]{1, 2}, new int[]{3, 4}, new int[]{1, 2, 3, 4}},
-                {new int[]{3, 2}, new int[]{4, 1}, new int[]{1, 2, 3, 4}},
                 {new int[]{4, 3, 2}, new int[]{1}, new int[]{1, 2, 3, 4}},
                 {new int[]{3, 2, 4, 1}, null, new int[]{1, 2, 3, 4}},
                 {null, new int[]{3, 2, 4, 1}, new int[]{1, 2, 3, 4}},
-                {new int[]{}, new int[]{}, new int[]{}},
                 {null, null, null}
         });
     }
@@ -50,8 +48,6 @@ public class MergeTopDown {
                 {{1, 2, 3, 4}, {1, 2, 3, 4}},
                 {{3, 2, 4, 1}, {1, 2, 3, 4}},
                 {{4, 3, 2, 1}, {1, 2, 3, 4}},
-                {{}, {}},
-                {{1}, {1}},
             }; //used to simulate sorting
 
         /* stub for sortArray */
