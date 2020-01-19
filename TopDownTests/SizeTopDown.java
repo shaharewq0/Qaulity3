@@ -18,7 +18,7 @@ import static org.junit.Assert.assertEquals;
  */
 @RunWith(Parameterized.class)
 public class SizeTopDown {
-    private Origin p;
+    private Program p;
     private TestType type;
     private int[] arr1;
     private int[] arr2;
@@ -73,7 +73,7 @@ public class SizeTopDown {
     }
 
     public SizeTopDown(TestType type, int[] arr1, int[] arr2, Object expectedOutput) {
-        this.p = new Origin();
+        this.p = new Program();
         this.type = type;
         this.arr1 = arr1;
         this.arr2 = arr2;
