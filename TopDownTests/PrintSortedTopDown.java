@@ -25,10 +25,7 @@ public class PrintSortedTopDown {
         return Arrays.asList(new Object[][] {
                 {new int[]{1, 2, 3, 4}, "TTT"},
                 {new int[]{3, 2, 4, 1}, "FTF"},
-                {new int[]{4, 3, 2, 1}, "FTF"},
-                {new int[]{1, 2, 1, 2}, "FTF"},
                 {new int[]{}, "TTT"},
-                {new int[]{1}, "TTT"},
                 {null, "No array\r\n"}
         });
     }
@@ -55,10 +52,7 @@ public class PrintSortedTopDown {
             new int[][][]{
                 {{1, 2, 3, 4}, {1, 2, 3, 4}},
                 {{3, 2, 4, 1}, {1, 2, 3, 4}},
-                {{4, 3, 2, 1}, {1, 2, 3, 4}},
-                {{1, 2, 1, 2}, {1, 1, 2, 2}},
                 {{}, {}},
-                {{1}, {1}},
             }; //used to simulate sorting
 
         /*
