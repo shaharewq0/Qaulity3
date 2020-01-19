@@ -18,14 +18,14 @@ import static org.junit.Assert.assertEquals;
  */
 @RunWith(Parameterized.class)
 public class SizeTopDown {
-    private Program p;
+    private Origin p;
     private TestType type;
     private int[] arr1;
     private int[] arr2;
     private Object expectedOutput;
 
     enum TestType { //used to define parameters for each test
-        isSorted, merge, printSorted, copy,maxIndex,minIndex,size
+        isSorted, merge, printSorted, copy,maxIndex,minIndex,size,swap,sum
     }
 
     @Parameterized.Parameters
@@ -39,6 +39,10 @@ public class SizeTopDown {
                 {TestType.size,new int[]{1, 2},null,0},
                 {TestType.size,new int[]{},null,0},
 
+                {TestType.sum,new int[]{1, 2},null,3},
+                {TestType.sum,new int[]{1, 4, 3},null,5},
+                {TestType.sum,new int[]{1},null,2},
+
                 {TestType.minIndex,new int[]{1, 2},null,0},
                 {TestType.minIndex,new int[]{0, -1, 3},null,1},
                 {TestType.minIndex,new int[]{},null,-1},
@@ -48,6 +52,10 @@ public class SizeTopDown {
                 {TestType.maxIndex,new int[]{},null,-1},
 
                 {TestType.copy,new int[]{1, 2,3,4},null,0},
+
+                {TestType.swap,new int[]{1, 2},new int[]{2, 1},0},
+                {TestType.swap,new int[]{1, 4, 3},new int[]{4, 1, 3},0},
+                {TestType.swap,new int[]{},null,0},
 
                 //merge parameters
                 {TestType.merge, new int[]{1, 2}, new int[]{3, 4}, new int[]{1, 2, 3, 4}},
@@ -65,11 +73,26 @@ public class SizeTopDown {
     }
 
     public SizeTopDown(TestType type, int[] arr1, int[] arr2, Object expectedOutput) {
-        this.p = new Program();
+        this.p = new Origin();
         this.type = type;
         this.arr1 = arr1;
         this.arr2 = arr2;
         this.expectedOutput = expectedOutput;
+    }
+
+    @Test
+    public void swapMinMax() {
+        if(type==TestType.swap) {
+            assert (arr1 != p.swapMinMax(arr1));
+            assertArrayEquals(arr2, p.swapMinMax(arr1));
+        }
+    }
+
+    @Test
+    public void sumMinMax() {
+        if(type==TestType.sum) {
+            assertEquals(expectedOutput, p.sumMinMax(arr1));
+        }
     }
 
     @Test

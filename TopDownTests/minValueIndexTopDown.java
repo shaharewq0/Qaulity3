@@ -9,7 +9,7 @@ import static org.junit.Assert.*;
 
 /*
     Test #11
-    Test: minValueIndex,minValue,swapMinMax
+    Test: minValueIndex,minValue,swapMinMax,sumMinMax
     Stubs: copyArr,size,maxValueIndex
  */
 @RunWith(Parameterized.class)
@@ -21,7 +21,7 @@ public class minValueIndexTopDown {
     private int expectedOutput;
 
     enum TestType { //used to define parameters for each test
-        swap, min,index
+        swap, min,index,sum
     }
 
 
@@ -32,6 +32,10 @@ public class minValueIndexTopDown {
                 {TestType.index,new int[]{1, 2},null,0},
                 {TestType.index,new int[]{0, -1, 3},null,1},
                 {TestType.index,new int[]{},null,-1},
+
+                {TestType.sum,new int[]{1, 2},null,3},
+                {TestType.sum,new int[]{1, 4, 3},null,5},
+                {TestType.sum,new int[]{1},null,2},
 
                 {TestType.min,new int[]{1, 2},null,1},
                 {TestType.min,new int[]{0, -1, 3},null,-1},
@@ -49,6 +53,13 @@ public class minValueIndexTopDown {
         this.arr1 = arr1;
         this.arr2=arr2;
         this.expectedOutput = expectedOutput;
+    }
+
+    @Test
+    public void sumMinMax() {
+        if(type==TestType.sum) {
+            assertEquals(expectedOutput, p.sumMinMax(arr1));
+        }
     }
 
     @Test
