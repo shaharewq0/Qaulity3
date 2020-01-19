@@ -34,10 +34,7 @@ public class CopyArrTopDown {
                 //isSorted parameters
                 {TestType.isSorted, new int[]{1, 2, 3, 4}, null, true},
                 {TestType.isSorted, new int[]{3, 2, 4, 1}, null, false},
-                {TestType.isSorted, new int[]{4, 3, 2, 1}, null, false},
-                {TestType.isSorted, new int[]{1, 2, 1, 2}, null, false},
                 {TestType.isSorted, new int[]{}, null, true},
-                {TestType.isSorted, new int[]{1}, null, true},
 
                 {TestType.copy,new int[]{1, 2,3,4},null,0},
 
@@ -48,20 +45,15 @@ public class CopyArrTopDown {
 
                 //merge parameters
                 {TestType.merge, new int[]{1, 2}, new int[]{3, 4}, new int[]{1, 2, 3, 4}},
-                {TestType.merge, new int[]{3, 2}, new int[]{4, 1}, new int[]{1, 2, 3, 4}},
                 {TestType.merge, new int[]{4, 3, 2}, new int[]{1}, new int[]{1, 2, 3, 4}},
                 {TestType.merge, new int[]{3, 2, 4, 1}, null, new int[]{1, 2, 3, 4}},
                 {TestType.merge, null, new int[]{3, 2, 4, 1}, new int[]{1, 2, 3, 4}},
-                {TestType.merge, new int[]{}, new int[]{}, new int[]{}},
                 {TestType.merge, null, null, null},
 
                 //printSorted parameters
                 {TestType.printSorted, new int[]{1, 2, 3, 4}, null, "1 2 3 4 \r\n1 2 3 4 \r\n1 2 3 4 \r\n"},
                 {TestType.printSorted, new int[]{3, 2, 4, 1}, null, "3 2 4 1 \r\n1 2 3 4 \r\n3 2 4 1 \r\n"},
-                {TestType.printSorted, new int[]{4, 3, 2, 1}, null, "4 3 2 1 \r\n1 2 3 4 \r\n4 3 2 1 \r\n"},
-                {TestType.printSorted, new int[]{1, 2, 1, 2}, null, "1 2 1 2 \r\n1 1 2 2 \r\n1 2 1 2 \r\n"},
                 {TestType.printSorted, new int[]{}, null, "\r\n\r\n\r\n"},
-                {TestType.printSorted, new int[]{1}, null, "1 \r\n1 \r\n1 \r\n"},
                 {TestType.printSorted, null, null, "No array\r\n"}
         });
     }
