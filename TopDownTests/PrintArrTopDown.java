@@ -10,7 +10,7 @@ import java.util.Collection;
 import static org.junit.Assert.*;
 
 /*
-    Test #5
+    Test #6
     Test: printSorted
     Real Functions: printArr
     Stubs: sortArray
@@ -26,10 +26,7 @@ public class PrintArrTopDown {
         return Arrays.asList(new Object[][] {
                 {new int[]{1, 2, 3, 4}, "1 2 3 4 \r\n1 2 3 4 \r\n1 2 3 4 \r\n"},
                 {new int[]{3, 2, 4, 1}, "3 2 4 1 \r\n1 2 3 4 \r\n3 2 4 1 \r\n"},
-                {new int[]{4, 3, 2, 1}, "4 3 2 1 \r\n1 2 3 4 \r\n4 3 2 1 \r\n"},
-                {new int[]{1, 2, 1, 2}, "1 2 1 2 \r\n1 1 2 2 \r\n1 2 1 2 \r\n"},
                 {new int[]{}, "\r\n\r\n\r\n"},
-                {new int[]{1}, "1 \r\n1 \r\n1 \r\n"},
                 {null, "No array\r\n"}
         });
     }
@@ -55,10 +52,7 @@ public class PrintArrTopDown {
                 new int[][][]{
                         {{1, 2, 3, 4}, {1, 2, 3, 4}},
                         {{3, 2, 4, 1}, {1, 2, 3, 4}},
-                        {{4, 3, 2, 1}, {1, 2, 3, 4}},
-                        {{1, 2, 1, 2}, {1, 1, 2, 2}},
-                        {{}, {}},
-                        {{1}, {1}},
+                        {{}, {}}
                 }; //used to simulate sorting
 
         /* stub for sortArray */
